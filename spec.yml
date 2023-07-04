@@ -1,6 +1,10 @@
+---
+
 language:
-  # TODO: replace exercises-template with "exercises-<language>"
-  docker_image: "hexletbasics/exercises-template"
-  extension: sh # TODO: replace
-  exercise_filename: index.sh # TODO: replace
-  exercise_test_filename: test_index.sh # TODO: replace
+  docker_image: "hexletbasics/exercises-pre-course-python"
+  extension: python
+  exercise_filename: index.py
+  exercise_test_filename: test_code.py
+  learn_as: first_language
+  progress: completed
+  name: Python

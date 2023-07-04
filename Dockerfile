@@ -1,12 +1,13 @@
-FROM hexletbasics/base-image:latest
+FROM hexletbasics/base-image
 
-# TODO: replace exercises-template with "exercises-<language>"
-WORKDIR /exercises-template
+RUN pip3 install flake8 pytest
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
 
-# https://github.com/pgrange/bash_unit
-RUN cd /usr/local/bin && curl -s https://raw.githubusercontent.com/pgrange/bash_unit/master/install.sh | bash
+WORKDIR /exercises-pre-course-python
 
 COPY . .
 
-# TODO: replace
-ENV PATH=/exercises-template/bin:$PATH
+ENV PYTHONPATH=/exercises-pre-course-python/src
+# RUN ln -s $(which python3) /usr/bin/python
+
+ENV PATH=/exercises-pre-course-python/bin:$PATH
