@@ -14,7 +14,7 @@ make
 # run
 make compose
 # check
-make ci-check
+make ci-check-
 
 # run tests
 make compose-test
