@@ -29,3 +29,6 @@ compose-code-lint:
 
 code-lint:
 	flake8 modules
+
+clear:
+	@(for i in $$(find . -type f -name description.en.yml); do rm $$(dirname $$i)/description.en.yml ; done)
