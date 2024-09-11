@@ -49,3 +49,21 @@ def get_type_of_sentence(sentence):
 ```
 
 Чтобы конструкцию было легче оформлять, старайтесь выбирать проверку без отрицаний и подстраивайте содержимое блоков под нее.
+
+На примере использования `else` видно, как важно не забывать отделять блоки.
+
+```python
+if number > 10:
+    print("Number is greater than 10")
+else:
+    if number == 10:
+        print("Number is exactly 10")
+# мы забыли сделать отступ
+# и получим синтаксическую ошибку
+else:
+    print("Number is less than 10")
+
+#    else:
+#    ^
+# SyntaxError: invalid syntax
+```
