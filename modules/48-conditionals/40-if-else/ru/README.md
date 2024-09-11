@@ -53,17 +53,34 @@ def get_type_of_sentence(sentence):
 На примере использования `else` видно, как важно не забывать отделять блоки.
 
 ```python
-if number > 10:
-    print("Number is greater than 10")
-else:
-    if number == 10:
-        print("Number is exactly 10")
-# мы забыли сделать отступ
-# и получим синтаксическую ошибку
-else:
-    print("Number is less than 10")
+# Неправильно
+def check_number(number):
+    if number > 0:
+        print("Число положительное")
+    if number > 10:
+        print("Число больше 10")
+    else:
+        print("Число не положительное")
 
-#    else:
-#    ^
-# SyntaxError: invalid syntax
+check_number(3)
+# => Число положительное
+# => Число не положительное
 ```
+
+В примере выше мы забыли "вложить" с помощью отступа второй `if`, потому `else` теперь относится к нему, а не первому `if`.
+
+```python
+# Правильно
+def check_number(number):
+    if number > 0:
+        print("Число положительное")
+        if number > 10:
+            print("Число больше 10")
+    else:
+        print("Число не положительное")
+
+check_number(3)
+# => Число положительное
+```
+
+Теперь второй `if` вложен в первый, а `else` на одном уровне с первым и противопоставляется ему.
