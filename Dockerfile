@@ -1,7 +1,8 @@
 FROM hexletbasics/base-image
 
-RUN pip3 install flake8 pytest
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
+RUN apt update && apt install -y python3-venv python3-pip
+
+RUN pip3 install --break-system-package flake8 pytest
 
 WORKDIR /exercises-pre-course-python
 
