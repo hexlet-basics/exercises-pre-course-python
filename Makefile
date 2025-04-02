@@ -25,7 +25,7 @@ ci-check:
 	docker compose --file docker-compose.yml up --abort-on-container-exit
 
 compose-code-lint:
-	docker compose run exercises make code-lint 
+	docker compose run exercises make code-lint
 
 code-lint:
-	flake8 modules
+	ruff check
