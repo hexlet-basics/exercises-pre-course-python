@@ -1,8 +1,7 @@
-
 Вы столкнулись с таким кодом, который выводит на экран общее количество комнат во владении нынешнего короля:
 
 ```python
-king = "Rooms in King Balon's Castle:"
+king = "Rooms in King Balon's Castles:"
 print(king)
 print(6 * 17)
 ```
@@ -16,7 +15,7 @@ print(6 * 17)
 Получится так:
 
 <pre class='hexlet-basics-output'>
-Rooms in King Balon's Castle:
+Rooms in King Balon's Castles:
 102
 </pre>
 

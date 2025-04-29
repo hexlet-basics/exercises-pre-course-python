@@ -1,5 +1,4 @@
 from index import print_table_of_squares
-
 from hexlet.test import expect_output
 
 
