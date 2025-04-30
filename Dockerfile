@@ -1,5 +1,7 @@
 FROM hexletbasics/base-image
 
+ENV COURSE_PATH=/exercises-pre-course-python
+
 # Install pipx using apt to avoid externally-managed Python issues
 RUN apt-get update && apt-get install -y pipx \
   && pipx ensurepath \
@@ -8,13 +10,13 @@ RUN apt-get update && apt-get install -y pipx \
 
 # Update PATH
 ENV PATH="/root/.local/bin:${PATH}"
-ENV PATH="/exercises-python/bin:${PATH}"
+ENV PATH="${COURSE_PATH}/bin:${PATH}"
 
 RUN pipx install uv
 
 ENV UV_PROJECT_ENVIRONMENT=/usr
 
-WORKDIR /exercises-pre-course-python
+WORKDIR ${COURSE_PATH}
 
 COPY pyproject.toml uv.lock ./
 
@@ -22,4 +24,4 @@ RUN uv sync --locked
 
 COPY . .
 
-ENV PYTHONPATH=/exercises-python/src
+ENV PYTHONPATH=${COURSE_PATH}/src
