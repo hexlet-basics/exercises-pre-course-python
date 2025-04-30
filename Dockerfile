@@ -14,7 +14,7 @@ RUN pipx install uv
 
 ENV UV_PROJECT_ENVIRONMENT=/usr
 
-WORKDIR /exercises-python
+WORKDIR /exercises-pre-course-python
 
 COPY pyproject.toml uv.lock ./
 
