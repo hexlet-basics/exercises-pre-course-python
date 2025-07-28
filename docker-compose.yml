@@ -3,6 +3,4 @@
 services:
   exercises:
     build: .
-    image: hexletbasics/exercises-pre-course-python:cached
     command: make check
-
